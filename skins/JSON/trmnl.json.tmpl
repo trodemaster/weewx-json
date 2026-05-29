@@ -28,6 +28,33 @@
         #if $current.rainRate.has_data
         "rain rate": {"value": $current.rainRate.raw, "units": "$current.rainRate.format(" ").lstrip()"},
         #end if
+        #if $current.dewpoint.has_data
+        "dew point": {"value": $current.dewpoint.raw, "units": "$current.dewpoint.format(" ").lstrip()"},
+        #end if
+        #if $current.windchill.has_data
+        "wind chill": {"value": $current.windchill.raw, "units": "$current.windchill.format(" ").lstrip()"},
+        #end if
+        #if $current.heatindex.has_data
+        "heat index": {"value": $current.heatindex.raw, "units": "$current.heatindex.format(" ").lstrip()"},
+        #end if
+        #if $current.inTemp.has_data
+        "inside temperature": {"value": $current.inTemp.raw, "units": "$current.inTemp.format(" ").lstrip()"},
+        #end if
+        #if $current.inHumidity.has_data
+        "inside humidity": {"value": $current.inHumidity.raw, "units": "$current.inHumidity.format(" ").lstrip()"},
+        #end if
+        #if $current.UV.has_data
+        "uv index": {"value": $current.UV.raw, "units": "$current.UV.format(" ").lstrip()"},
+        #end if
+        #if $current.radiation.has_data
+        "radiation": {"value": $current.radiation.raw, "units": "$current.radiation.format(" ").lstrip()"},
+        #end if
+        #if $current.cloudbase.has_data
+        "cloud base": {"value": $current.cloudbase.raw, "units": "$current.cloudbase.format(" ").lstrip()"},
+        #end if
+        #if $current.pm2_5_nowcast_aqi.has_data
+        "aqi nowcast": {"value": $current.pm2_5_nowcast_aqi.raw, "units": "$current.pm2_5_nowcast_aqi.format(" ").lstrip()"},
+        #end if
         "void_end": null
     },
     "day":
