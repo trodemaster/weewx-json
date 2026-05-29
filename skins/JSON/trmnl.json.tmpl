@@ -1,0 +1,49 @@
+##  TRMNL e-ink display feed — minimal current conditions, day high/low, almanac.
+##  Consumed by trmnl-byos (../trmnl-byos/DATA_FEEDS.md).
+{
+    "current":
+    {
+        #if $current.outTemp.has_data
+        "temperature": {"value": $current.outTemp.raw, "units": "$current.outTemp.format(" ").lstrip()"},
+        #end if
+        #if $current.outHumidity.has_data
+        "humidity": {"value": $current.outHumidity.raw, "units": "$current.outHumidity.format(" ").lstrip()"},
+        #end if
+        #if $current.barometer.has_data
+        "barometer": {"value": $current.barometer.raw, "units": "$current.barometer.format(" ").lstrip()"},
+        #end if
+        #if $current.windSpeed.has_data
+        "wind speed": {"value": $current.windSpeed.raw, "units": "$current.windSpeed.format(" ").lstrip()"},
+        #end if
+        #if $current.windGust.has_data
+        "wind gust": {"value": $current.windGust.raw, "units": "$current.windGust.format(" ").lstrip()"},
+        #end if
+        #if $current.windDir.has_data
+        "wind direction": {"value": $current.windDir.raw, "units": "$current.windDir.format(" ").lstrip()"},
+        #end if
+        #if $current.rainRate.has_data
+        "rain rate": {"value": $current.rainRate.raw, "units": "$current.rainRate.format(" ").lstrip()"},
+        #end if
+        "void_end": null
+    },
+    "day":
+    {
+        #if $day.outTemp.has_data
+        "max temperature": {"value": $day.outTemp.max.raw, "units": "$day.outTemp.max.format(" ").lstrip()"},
+        "min temperature": {"value": $day.outTemp.min.raw, "units": "$day.outTemp.min.format(" ").lstrip()"},
+        #end if
+        #if $day.rain.has_data
+        "rain total": {"value": $day.rain.sum.raw, "units": "$day.rain.sum.format(" ").lstrip()"},
+        #end if
+        "void_end": null
+    },
+    "almanac":
+    {
+        "sunrise": "$almanac.sunrise.format("%-I:%M %p")",
+        "sunset":  "$almanac.sunset.format("%-I:%M %p")"
+    },
+    "generation":
+    {
+        "time": "$current.dateTime.format("%a, %d %b %Y %H:%M:%S %Z")"
+    }
+}
