@@ -1,6 +1,10 @@
 ##  TRMNL e-ink display feed — minimal current conditions, day high/low, almanac.
 ##  Consumed by trmnl-byos (../trmnl-byos/DATA_FEEDS.md).
 {
+    "station":
+    {
+        "location": "$station.location"
+    },
     "current":
     {
         #if $current.outTemp.has_data
