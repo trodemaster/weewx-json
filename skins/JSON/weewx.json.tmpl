@@ -44,11 +44,23 @@
         #if $current.rainRate.has_data
         "rain rate": {"value": $current.rainRate.raw, "units": "$current.rainRate.format(" ").lstrip()"},
         #end if
+        #if $day.rain.has_data
+        "rain today": {"value": $day.rain.sum.raw, "units": "$day.rain.sum.format(" ").lstrip()"},
+        #end if
         #if $current.inTemp.has_data
         "inside temperature": {"value": $current.inTemp.raw, "units": "$current.inTemp.format(" ").lstrip()"},
         #end if
         #if $current.inHumidity.has_data
         "inside humidity": {"value": $current.inHumidity.raw, "units": "$current.inHumidity.format(" ").lstrip()"},
+        #end if
+        #if $current.UV.has_data
+        "uv index": {"value": $current.UV.raw, "units": "$current.UV.format(" ").lstrip()"},
+        #end if
+        #if $current.radiation.has_data
+        "radiation": {"value": $current.radiation.raw, "units": "$current.radiation.format(" ").lstrip()"},
+        #end if
+        #if $current.cloudbase.has_data
+        "cloud base": {"value": $current.cloudbase.raw, "units": "$current.cloudbase.format(" ").lstrip()"},
         #end if
         #if $current.pm2_5_nowcast_aqi.has_data
         "pm2_5_nowcast_aqi": {"value": $current.pm2_5_nowcast_aqi.raw, "units": "$current.pm2_5_nowcast_aqi.format(" ").lstrip()"},
