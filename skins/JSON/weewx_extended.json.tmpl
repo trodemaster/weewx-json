@@ -50,6 +50,12 @@
         #if $current.inHumidity.has_data
         "inside humidity": {"value": $current.inHumidity.raw, "units": "$current.inHumidity.format(" ").lstrip()"},
         #end if
+        #if $current.pm2_5_nowcast_aqi.has_data
+        "pm2_5_nowcast_aqi": {"value": $current.pm2_5_nowcast_aqi.raw, "units": "$current.pm2_5_nowcast_aqi.format(" ").lstrip()"},
+        #end if
+        #if $current.pm2_5_in_nowcast_aqi.has_data
+        "pm2_5_in_nowcast_aqi": {"value": $current.pm2_5_in_nowcast_aqi.raw, "units": "$current.pm2_5_in_nowcast_aqi.format(" ").lstrip()"},
+        #end if
         ## Last value can't end with a comma
         "void_end": null
     },
